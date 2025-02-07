@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "Cookie Copier",
+  "version": "2.0.0",
+  "description": "A professional Chrome extension for copying and managing cookies across domains with enhanced security and user experience",
+  "author": "cybertron288",
+  
+  "permissions": [
+    "cookies",
+    "activeTab", 
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": ["*://*/*"],
+  
+  "action": {
+    "default_popup": "popup-modern.html",
+    "default_title": "Cookie Copier - Manage cookies across domains"
+  },
+  
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  
+  "icons": {
+    "16": "assets/icons/icon-16.svg",
+    "48": "assets/icons/icon-48.svg",
+    "128": "assets/icons/icon-128.svg"
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  
+  "minimum_chrome_version": "88",
+  
+  "commands": {
+    "copy-cookies": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+C",
+        "mac": "Command+Shift+C"
+      },
+      "description": "Copy cookies from current domain"
+    }
+  }
+}
