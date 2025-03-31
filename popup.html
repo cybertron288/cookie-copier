@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookie Copier</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0f172a;
+    }
+    .container { width:350px; border-radius: 12px; color: #cbd5e1; }
+    .text-xl { font-size: 18px; }
+    .font-bold { font-weight: bold; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-2 { margin-bottom: 0.5rem; }
+    .bg-blue-500 { background-color: #4BA3C3; }
+    .bg-green-500 { background-color: #A18AFF; }
+    .text-white { color: white; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+    .pb-2 { padding-bottom: 0.5rem; }
+    .pb-4 { padding-bottom: 1rem; }
+    .pt-2 { padding-top: 0.5rem; }
+    .rounded { border-radius: 0.25rem; }
+    .text-lg { font-size: 14px; }
+    .font-semibold { font-weight: 600; }
+    .flex { display: flex; }
+    .items-center { align-items: center; }
+    .justify-between { justify-content: space-between; }
+    .mr-2 { margin-right: 0.5rem; }
+    .mt-2 { margin-top: 0.5rem; }
+    .text-sm { font-size: 0.875rem; }
+    .text-gray-600 { color: #4b5563; }
+    .border-none { border: none; }
+    .border-b { border-bottom: 1px solid #475569; }
+    .flex { display: flex;}
+    .flex-col { flex-direction: column; }
+   .gap-2 { gap: 0.5rem; }
+   .text-center { text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container flex flex-col pb-4">
+    <h1 class="text-xl font-bold border-b px-4 pb-2">Cookie Copier</h1>
+    <div class="flex gap-2 px-4 pt-2">
+      <div>
+        <p id="currentDomain" class="mb-2">Current Domain: loading...</p>
+        <h2 class="text-lg font-semibold mb-2">Stored Cookies</h2>
+        <div id="historyList" class="mb-4"></div>
+      </div>
+      <div>
+        <div class="mb-4">
+          <button id="copyButton" class="bg-blue-500 text-white px-4 py-2 rounded border-none">
+            Copy Cookies
+          </button>
+        </div>
+        <button id="applyButton" class="bg-green-500 text-white px-4 py-2 rounded mt-2 border-none">
+          Apply Selected
+        </button>
+      </div>
+    </div>
+    <div id="status" class="text-sm px-4"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
