@@ -1,0 +1,61 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="cookieGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3730A3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="shadowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(0,0,0,0.2);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgba(0,0,0,0.4);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Shadow -->
+  <circle cx="66" cy="66" r="54" fill="url(#shadowGradient)"/>
+  
+  <!-- Main cookie circle -->
+  <circle cx="64" cy="64" r="54" fill="url(#cookieGradient)"/>
+  <circle cx="64" cy="64" r="50" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-opacity="0.8"/>
+  
+  <!-- Large cookie chunks -->
+  <circle cx="48" cy="48" r="10" fill="#FFFFFF"/>
+  <circle cx="80" cy="52" r="8" fill="#FFFFFF"/>
+  <circle cx="56" cy="80" r="9" fill="#FFFFFF"/>
+  <circle cx="85" cy="85" r="7" fill="#FFFFFF"/>
+  <circle cx="40" cy="75" r="7" fill="#FFFFFF"/>
+  <circle cx="75" cy="32" r="5.5" fill="#FFFFFF"/>
+  <circle cx="96" cy="64" r="5.5" fill="#FFFFFF"/>
+  <circle cx="32" cy="58" r="6" fill="#FFFFFF"/>
+  
+  <!-- Medium chunks -->
+  <circle cx="65" cy="35" r="4.5" fill="#FFFFFF"/>
+  <circle cx="92" cy="42" r="4" fill="#FFFFFF"/>
+  <circle cx="35" cy="88" r="4" fill="#FFFFFF"/>
+  <circle cx="70" cy="95" r="3.5" fill="#FFFFFF"/>
+  <circle cx="25" cy="40" r="3.5" fill="#FFFFFF"/>
+  <circle cx="88" cy="75" r="4.5" fill="#FFFFFF"/>
+  
+  <!-- Small details -->
+  <circle cx="53" cy="32" r="3" fill="#FFFFFF"/>
+  <circle cx="95" cy="55" r="2.8" fill="#FFFFFF"/>
+  <circle cx="30" cy="68" r="2.8" fill="#FFFFFF"/>
+  <circle cx="42" cy="95" r="3.2" fill="#FFFFFF"/>
+  <circle cx="82" cy="98" r="2.5" fill="#FFFFFF"/>
+  <circle cx="98" cy="78" r="2.5" fill="#FFFFFF"/>
+  <circle cx="20" cy="50" r="2.3" fill="#FFFFFF"/>
+  <circle cx="35" cy="25" r="2" fill="#FFFFFF"/>
+  <circle cx="78" cy="25" r="2.2" fill="#FFFFFF"/>
+  <circle cx="105" cy="35" r="2" fill="#FFFFFF"/>
+  
+  <!-- Extra small details for texture -->
+  <circle cx="60" cy="60" r="2" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="45" cy="62" r="1.8" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="72" cy="68" r="1.5" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="58" cy="42" r="1.5" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="38" cy="52" r="1.3" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="85" cy="58" r="1.3" fill="rgba(255,255,255,0.7)"/>
+  
+  <!-- Highlight for glossy effect -->
+  <ellipse cx="50" cy="42" rx="15" ry="8" fill="rgba(255,255,255,0.2)" transform="rotate(-30 50 42)"/>
+</svg>

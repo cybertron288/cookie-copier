@@ -1,0 +1,91 @@
+{
+  "name": "cookie-copier",
+  "displayName": "Cookie Copier",
+  "version": "2.0.0",
+  "description": "A professional Chrome extension for copying and managing cookies across domains with enhanced security and user experience",
+  "main": "dist/popup.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.{js,ts,css,html}",
+    "type-check": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "zip": "pnpm run build && zip -r cookie-copier-extension.zip dist/"
+  },
+  "keywords": [
+    "chrome-extension",
+    "cookies",
+    "developer-tools",
+    "session-management",
+    "testing",
+    "authentication"
+  ],
+  "author": {
+    "name": "cybertron288",
+    "email": "ravi60353@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cybertron288/cookie-copier.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cybertron288/cookie-copier/issues"
+  },
+  "homepage": "https://github.com/cybertron288/cookie-copier#readme",
+  "devDependencies": {
+    "@crxjs/vite-plugin": "2.2.0",
+    "@tailwindcss/forms": "0.5.10",
+    "@tailwindcss/postcss": "4.1.13",
+    "@tailwindcss/typography": "0.5.16",
+    "@types/chrome": "^0.0.246",
+    "@types/jest": "^29.5.5",
+    "@types/node": "^20.6.3",
+    "@types/react": "19.1.12",
+    "@types/react-dom": "19.1.9",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "@vitejs/plugin-react": "5.0.2",
+    "autoprefixer": "10.4.21",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "jest": "^29.7.0",
+    "postcss": "^8.5.6",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.1",
+    "tailwindcss": "3.4.17",
+    "terser": "5.44.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2",
+    "vite": "7.1.5",
+    "vite-plugin-chrome-extension": "0.0.7",
+    "vite-tsconfig-paths": "5.1.4"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "browserslist": [
+    "last 2 Chrome versions"
+  ],
+  "dependencies": {
+    "@radix-ui/react-dialog": "1.1.15",
+    "@radix-ui/react-dropdown-menu": "2.1.16",
+    "@radix-ui/react-label": "2.1.7",
+    "@radix-ui/react-select": "2.2.6",
+    "@radix-ui/react-switch": "1.2.6",
+    "@radix-ui/react-tabs": "1.1.13",
+    "@radix-ui/react-tooltip": "1.2.8",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-react": "0.543.0",
+    "tailwind-merge": "3.3.1"
+  }
+}

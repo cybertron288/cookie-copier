@@ -1,0 +1,309 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Modern Neutral Palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+    
+    /* Elegant Grays */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    /* Sophisticated Accents */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+    
+    /* Primary - Modern Blue */
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Soft Gray */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+    
+    /* Accent - Purple */
+    --accent: 262 83% 58%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Semantic Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Borders and Inputs */
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 221 83% 53%;
+    
+    /* Border Radius */
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark Mode - Pure Black Design */
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+    
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+    
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 9%;
+    
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
+    
+    --accent: 270 91% 65%;
+    --accent-foreground: 0 0% 9%;
+    
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 95%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+/* Chrome Extension Specific */
+html, body {
+  width: 440px;
+  min-width: 440px;
+  max-width: 440px;
+  min-height: 600px;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+/* Custom Scrollbar - Minimal */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/30;
+}
+
+/* Glass Morphism Effects */
+.glass {
+  @apply bg-background/60 backdrop-blur-xl border border-border/50;
+}
+
+.glass-subtle {
+  @apply bg-background/30 backdrop-blur-md border border-border/30;
+}
+
+/* Modern Card Styles */
+.card-modern {
+  @apply bg-card rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300;
+}
+
+/* Smooth Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Modern Button Styles */
+.btn-modern {
+  @apply relative overflow-hidden rounded-lg font-medium transition-all duration-200;
+  @apply hover:scale-[1.02] active:scale-[0.98];
+}
+
+.btn-modern::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent;
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.btn-modern:hover::before {
+  transform: translateX(100%);
+}
+
+/* Elegant Input Styles */
+.input-modern {
+  @apply bg-background/50 border border-border/50 rounded-lg px-4 py-2.5;
+  @apply focus:bg-background focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20;
+  @apply transition-all duration-200 placeholder:text-muted-foreground/60;
+}
+
+/* Status Indicators */
+.status-dot {
+  @apply w-2 h-2 rounded-full animate-pulse-subtle;
+}
+
+.status-dot-success {
+  @apply bg-success;
+}
+
+.status-dot-warning {
+  @apply bg-warning;
+}
+
+.status-dot-error {
+  @apply bg-destructive;
+}
+
+/* Cookie Entry Cards */
+.cookie-card {
+  @apply relative bg-card/50 rounded-lg border border-border/30 p-4;
+  @apply hover:bg-card hover:border-border/60 hover:shadow-sm;
+  @apply transition-all duration-200 cursor-pointer;
+}
+
+.cookie-card.selected {
+  @apply bg-primary/5 border-primary/30 shadow-sm;
+}
+
+.cookie-card.selected::before {
+  content: '';
+  @apply absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-l-lg;
+}
+
+/* Notification Styles */
+.notification {
+  @apply fixed top-4 right-4 z-50 max-w-sm;
+  @apply bg-card border border-border rounded-lg shadow-lg p-4;
+  @apply animate-slide-in;
+}
+
+/* Toggle Switch - Modern */
+.toggle-modern {
+  @apply relative inline-flex h-6 w-11 items-center rounded-full;
+  @apply bg-muted transition-colors duration-200;
+}
+
+.toggle-modern.checked {
+  @apply bg-primary;
+}
+
+.toggle-thumb {
+  @apply absolute left-0.5 h-5 w-5 rounded-full bg-white shadow-sm;
+  @apply transition-transform duration-200;
+}
+
+.toggle-modern.checked .toggle-thumb {
+  @apply translate-x-5;
+}
+
+/* Minimal Tab Design */
+.tab-minimal {
+  @apply relative px-4 py-2 text-sm font-medium text-muted-foreground;
+  @apply hover:text-foreground transition-colors duration-200;
+}
+
+.tab-minimal.active {
+  @apply text-foreground;
+}
+
+.tab-minimal.active::after {
+  content: '';
+  @apply absolute bottom-0 left-0 right-0 h-0.5 bg-primary;
+}
+
+/* Hover Effects */
+.hover-lift {
+  @apply transition-transform duration-200 hover:-translate-y-0.5;
+}
+
+.hover-glow {
+  @apply transition-shadow duration-200 hover:shadow-lg hover:shadow-primary/10;
+}
+
+/* Loading States */
+.skeleton {
+  @apply bg-muted animate-pulse rounded-md;
+}
+
+/* Subtle Gradients */
+.gradient-subtle {
+  @apply bg-gradient-to-br from-background to-muted/30;
+}
+
+.gradient-primary {
+  @apply bg-gradient-to-r from-primary to-accent;
+}
+
+/* Text Styles */
+.text-gradient {
+  @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+}
+
+/* Dividers */
+.divider {
+  @apply h-px bg-gradient-to-r from-transparent via-border to-transparent;
+}
