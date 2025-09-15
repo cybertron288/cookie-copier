@@ -62,6 +62,20 @@ export default defineConfig({
             path.resolve(__dirname, 'dist/manifest.json')
           );
           console.log('✓ Manifest copied');
+
+          // Copy icon files
+          mkdirSync(path.resolve(__dirname, 'dist/icons'), { recursive: true });
+          const iconSizes = ['16', '32', '48', '128'];
+          iconSizes.forEach(size => {
+            const sourcePath = path.resolve(__dirname, `src/assets/icons/icon-${size}.png`);
+            const destPath = path.resolve(__dirname, `dist/icons/icon-${size}.png`);
+            try {
+              copyFileSync(sourcePath, destPath);
+              console.log(`✓ Icon ${size}x${size} copied`);
+            } catch (err) {
+              console.error(`Failed to copy icon-${size}.png:`, err);
+            }
+          });
         } catch (err) {
           console.error('Failed to copy manifest:', err);
         }
